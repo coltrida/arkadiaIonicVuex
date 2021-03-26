@@ -18,7 +18,6 @@ const actions = {
     },
 
     async saveragazzo({commit}, payload){
-        console.log(payload);
         const response = await axios.post(`${help().linkinserisciragazzo}`, {
             nomeRagazzo: payload.nomeRagazzo,
             voucher: payload.voucher,

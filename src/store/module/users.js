@@ -3,6 +3,7 @@ import help from '../../help';
 
 const state = () => ({
     users: [],
+    presenze: [],
     user: {},
     logged: false
 });
@@ -10,6 +11,10 @@ const state = () => ({
 const getters = {
     allusers(state){
         return state.users;
+    },
+
+    allpresenze(state){
+        return state.presenze;
     },
 
     getUser(state){
@@ -27,15 +32,46 @@ const actions = {
         commit('fetchUsers', response.data);
     },
 
+    async fetchPresenze({commit}, id){
+        const response = await axios.get(`${help().linkpresenzeoperatore}/${id}`);
+        commit('fetchPresenze', response.data);
+    },
+
     async loginUser({commit}, payload){
         const response = await axios.post(`${help().linklogin}`, payload);
         commit('loginUser', response.data);
+    },
+
+    async savepresenza({commit}, payload){
+        const response = await axios.post(`${help().linkpresenzeoperatore}`, {
+            id: payload.idUser,
+            giorno: payload.giorno,
+            ore: payload.ore
+        });
+        commit('savepresenza', response.data);
+    },
+
+    async eliminapresenza({commit}, id){
+        await axios.delete(`${help().linkpresenzeoperatore}/${id}`);
+        commit('eliminapresenza', id);
     },
 };
  
 const mutations = {
     fetchUsers(state, payload){
         state.users = payload;
+    },
+
+    fetchPresenze(state, payload){
+        state.presenze = payload;
+    },
+
+    savepresenza(state, payload){
+        state.presenze.unshift(payload);
+    },
+
+    eliminapresenza(state, id){
+        state.presenze = state.presenze.filter(u => u.id !== id);
     },
 
     loginUser(state, payload){

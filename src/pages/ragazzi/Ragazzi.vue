@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import {IonCard, IonCardContent, IonCardTitle, IonFab, IonFabButton, IonIcon, IonItem} from '@ionic/vue';
+import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonItem} from '@ionic/vue';
 import { add, trash } from 'ionicons/icons'
 import { mapActions, mapGetters } from 'vuex';
 export default {
     components: {
-        IonCard, IonCardContent, IonCardTitle, IonFab, IonFabButton, IonIcon, IonItem
+        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonItem
     },
 
     computed:{

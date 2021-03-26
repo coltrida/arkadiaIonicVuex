@@ -7,6 +7,8 @@ import Ragazzi from '../pages/ragazzi/Ragazzi.vue';
 import AddOrUpdateRagazzo from '../pages/ragazzi/AddOrUpdateRagazzo.vue';
 import Attivita from '../pages/attivita/Attivita.vue';
 import AddOrUpdateAttivita from '../pages/attivita/AddOrUpdateAttivita.vue';
+import PresenzeOperatore from '../pages/operatori/PresenzeOperatore.vue';
+import AddPresenza from '../pages/operatori/AddPresenza.vue';
 
 const routes = [
   {
@@ -49,6 +51,14 @@ const routes = [
   {
     path: '/add-or-update-attivita/:id',
     component: AddOrUpdateAttivita
+  },
+  {
+    path: '/presenzeOperatore',
+    component: PresenzeOperatore
+  },
+  {
+    path: '/add-presenza',
+    component: AddPresenza
   },
 ]
 

@@ -1,21 +1,20 @@
 <template>
-    <master-layout pageTitle="Attività">
+    <master-layout pageTitle="Presenze">
         <div>
-            <ion-card v-for="activity in allactivities" :key="activity.id">
+            <ion-card v-for="presenza in allpresenze" :key="presenza.id">
                 <ion-card-content>
-                    <ion-card-title>{{activity.name}}</ion-card-title>
-                    <ion-card-subtitle>Tipo: {{activity.tipo}}</ion-card-subtitle>
-                    <ion-card-subtitle>Costo: {{activity.costo}}</ion-card-subtitle>
+                    <ion-card-title>{{presenza.giorno}}</ion-card-title>
+                    <ion-card-subtitle>Ore: {{presenza.ore}}</ion-card-subtitle>
                 </ion-card-content>
                 <ion-item>
-                    <ion-icon @click="deleteActivity(activity.id)" :icon="trash"></ion-icon>
+                    <ion-icon @click="deletePresenza(presenza.id)" :icon="trash"></ion-icon>
                 </ion-item>
             </ion-card>
         </div>
         
         <template v-slot:footerdata>
         <ion-fab vertical="bottom" horizontal="end">
-            <ion-fab-button routerLink="/add-or-update-attivita/0">
+            <ion-fab-button routerLink="/add-presenza">
                 <ion-icon :icon="add"></ion-icon>
             </ion-fab-button>
         </ion-fab>
@@ -33,23 +32,28 @@ export default {
     },
 
     computed:{
-        ...mapGetters('attivita', {
-            allactivities:'allactivities'
+        ...mapGetters('users', {
+            allpresenze:'allpresenze',
+            getUser:'getUser'
         })
     },
 
     mounted(){
-        this.fetchActivities()
+        this.fetchPresenze()
     },
 
     methods:{
-        ...mapActions('attivita', {
-            fetchActivities:'fetchActivities',
-            eliminaactivityAction: 'eliminaactivity'
+        ...mapActions('users', {
+            fetchPresenzeAction:'fetchPresenze',
+            eliminapresenzaAction: 'eliminapresenza'
         }),
 
-        deleteActivity(id){
-            this.eliminaactivityAction(id);
+        fetchPresenze(){
+            this.fetchPresenzeAction(this.getUser.id);
+        },
+
+        deletePresenza(id){
+            this.eliminapresenzaAction(id);
         }
     },
 

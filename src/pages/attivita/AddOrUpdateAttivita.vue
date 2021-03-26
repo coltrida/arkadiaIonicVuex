@@ -2,69 +2,74 @@
     <master-layout :pageTitle="pageTitle">
         <ion-card>
             <ion-item>
-                <ion-label position="floating">Nome Ragazzo</ion-label>
-                <ion-input v-model="ragazzo.nomeRagazzo"></ion-input>
+                <ion-label position="floating">Nome Attività</ion-label>
+                <ion-input v-model="activity.nomeAttivita"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">Voucher</ion-label>
-                <ion-input type="number" v-model="ragazzo.voucher"></ion-input>
+                <ion-label position="floating">Tipo</ion-label>
+                <ion-select 
+                    @ionBlur="activity.tipo = $event.target.value">
+                    <ion-select-option value="mensile">Mensile</ion-select-option>
+                    <ion-select-option value="orario">Orario</ion-select-option>
+                </ion-select>
             </ion-item>
             <ion-item>
-                <ion-label position="floating">Scadenza voucher</ion-label>
-                <ion-input type="date" v-model="ragazzo.scadenza"></ion-input>
+                <ion-label position="floating">Costo</ion-label>
+                <ion-input v-model="activity.costo"></ion-input>
             </ion-item>
-            <ion-button expand="full" @click="saveorupdateragazzo()">{{ btnText }}</ion-button>
+            <ion-button expand="full" @click="saveorupdateactivity()">{{ btnText }}</ion-button>
         </ion-card>
     </master-layout>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
-import { IonCard, IonItem, IonLabel, IonInput, IonButton } from '@ionic/vue';
+import { mapActions } from 'vuex';
+import { IonCard, IonItem, IonLabel, IonInput, IonButton, IonSelect, IonSelectOption } from '@ionic/vue';
 export default {
-    components: { IonCard, IonItem, IonLabel, IonInput, IonButton  },
+    components: { IonCard, IonItem, IonLabel, IonInput, IonButton, IonSelect, IonSelectOption  },
 
     data(){
         return {
             routeId: Number(this.$route.params.id),
             pageTitle: '',
             btnText: "",
-            ragazzo: {}
+            tipooo:'',
+            activity: {}
         }
     },
 
     computed:{
-        ...mapGetters('cars', {
+        /* ...mapGetters('attivita', {
             userbyId: 'userbyId'
-        }),
+        }), */
     },
 
     methods:{
-        ...mapActions('ragazzi', {
-            saveragazzo: 'saveragazzo',
+        ...mapActions('attivita', {
+            saveactivity: 'saveactivity',
             /* updateuser: 'updateuser' */
         }),
 
-        saveorupdateragazzo(){
+        saveorupdateactivity(){
             if(this.routeId == 0){
-                this.saveragazzo(this.ragazzo);
+                this.saveactivity(this.activity);
             } /* else {
                 this.updatevettura(this.nomevettura);
             } */
-            this.$router.push("/ragazzi");
+            this.$router.push("/attivita");
         }
     },
     ionViewDidEnter(){
         if(this.routeId === 0){
-            this.pageTitle = 'Aggiungi Ragazzo';
+            this.pageTitle = 'Aggiungi Attività';
             this.btnText = "Aggiungi";
             this.ragazzo = {
-                nomeRagazzo : '',
-                voucher : 0,
-                scadenza : null
+                nomeAttivita : '',
+                tipo : '',
+                costo : 0
             };
         } else {
-            this.pageTitle = 'Modifica Ragazzo';
+            this.pageTitle = 'Modifica Attività';
             this.btnText = "Modifica";
             this.userInfo = this.userbyId(this.routeId);
         }
