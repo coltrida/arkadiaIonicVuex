@@ -39,7 +39,6 @@ const mutations = {
     },
 
     loginUser(state, payload){
-        console.log(payload);
         if (payload)
         {
             state.user = payload;

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">arkadia</string>
+    <string name="title_activity_main">arkadia</string>
+    <string name="package_name">com.arkadia</string>
+    <string name="custom_url_scheme">com.arkadia</string>
+</resources>

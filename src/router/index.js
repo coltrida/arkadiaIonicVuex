@@ -1,8 +1,12 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import Home from '../pages/Home.vue';
-import Vetture from '../pages/Vetture.vue';
-import Operatori from '../pages/Operatori.vue';
-import Ragazzi from '../pages/Ragazzi.vue';
+import Vetture from '../pages/vetture/Vetture.vue';
+import AddOrUpdateVettura from '../pages/vetture/AddOrUpdateVettura.vue';
+import Operatori from '../pages/operatori/Operatori.vue';
+import Ragazzi from '../pages/ragazzi/Ragazzi.vue';
+import AddOrUpdateRagazzo from '../pages/ragazzi/AddOrUpdateRagazzo.vue';
+import Attivita from '../pages/attivita/Attivita.vue';
+import AddOrUpdateAttivita from '../pages/attivita/AddOrUpdateAttivita.vue';
 
 const routes = [
   {
@@ -28,6 +32,23 @@ const routes = [
     path: '/ragazzi',
     name: 'Ragazzi',
     component: Ragazzi
+  },
+  {
+    path: '/attivita',
+    name: 'Attivita',
+    component: Attivita
+  },
+  {
+    path: '/add-or-update-vettura/:id',
+    component: AddOrUpdateVettura
+  },
+  {
+    path: '/add-or-update-ragazzo/:id',
+    component: AddOrUpdateRagazzo
+  },
+  {
+    path: '/add-or-update-attivita/:id',
+    component: AddOrUpdateAttivita
   },
 ]
 

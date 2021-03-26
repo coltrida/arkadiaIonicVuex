@@ -16,11 +16,34 @@ const actions = {
         const response = await axios.get(`${help().linkragazzi}`);
         commit('fetchRagazzi', response.data);
     },
+
+    async saveragazzo({commit}, payload){
+        console.log(payload);
+        const response = await axios.post(`${help().linkinserisciragazzo}`, {
+            nomeRagazzo: payload.nomeRagazzo,
+            voucher: payload.voucher,
+            scadenza: payload.scadenza
+        });
+        commit('saveragazzo', response.data);
+    },
+
+    async eliminaragazzo({commit}, id){
+        await axios.delete(`${help().linkragazzi}/${id}`);
+        commit('eliminaragazzo', id);
+    },
 };
  
 const mutations = {
     fetchRagazzi(state, payload){
         state.ragazzi = payload;
+    },
+
+    saveragazzo(state, payload){
+        state.ragazzi.unshift(payload);
+    },
+
+    eliminaragazzo(state, id){
+        state.ragazzi = state.ragazzi.filter(u => u.id !== id);
     },
 };
  

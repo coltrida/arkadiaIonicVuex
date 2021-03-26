@@ -9,7 +9,7 @@
             </ion-item>
             <ion-item>
                 <ion-label position="floating">Password</ion-label>
-                <ion-input v-model="user.password"></ion-input>
+                <ion-input type="password" v-model="user.password"></ion-input>
             </ion-item>
             <ion-button expand="full" @click="login()">Login</ion-button>
         </ion-card>
@@ -24,8 +24,8 @@ export default {
     data(){
         return {
             user: {
-                email: '',
-                password: ''
+                email: 'cacao@cacao.it',
+                password: '123456'
             }
         }
     },

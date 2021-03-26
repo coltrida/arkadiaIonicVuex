@@ -1,5 +1,6 @@
 const help = () => {
     return {
+
         linkragazzi: 'http://statistichearkadia.local/api/ragazzi',
         linkattivita: 'http://statistichearkadia.local/api/attivita',
         linkvetture: 'http://statistichearkadia.local/api/vetture',
@@ -20,10 +21,10 @@ const help = () => {
         linkmeseattuale: 'http://statistichearkadia.local/api/statistiche/meseAttuale',
         linkannoattuale: 'http://statistichearkadia.local/api/statistiche/annoAttuale',
         linkchilometrivetture: 'http://statistichearkadia.local/api/statistiche/chilometriVetture',
-        linkchilometriragazzi: 'http://statistichearkadia.local/api/statistiche/chilometriRagazzi',
+        linkchilometriragazzi: 'http://statistichearkadia.local/api/statistiche/chilometriRagazzi', 
 
-/*
 
+/* 
         linkragazzi: 'https://www.andirivieni.eu/api/ragazzi',
         linkattivita: 'https://www.andirivieni.eu/api/attivita',
         linkvetture: 'https://www.andirivieni.eu/api/vetture',
@@ -45,8 +46,8 @@ const help = () => {
         linkannoattuale: 'https://www.andirivieni.eu/api/statistiche/annoAttuale',
         linkchilometrivetture: 'https://www.andirivieni.eu/api/statistiche/chilometriVetture',
         linkchilometriragazzi: 'https://www.andirivieni.eu/api/statistiche/chilometriRagazzi',
+ */
 
-*/
     };
 };
 export default help;
