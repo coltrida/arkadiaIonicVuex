@@ -10,6 +10,7 @@ import AddOrUpdateAttivita from '../pages/attivita/AddOrUpdateAttivita.vue';
 import PresenzeOperatore from '../pages/operatori/PresenzeOperatore.vue';
 import AddPresenza from '../pages/operatori/AddPresenza.vue';
 import Viaggi from '../pages/viaggi/Viaggi.vue';
+import AddViaggio from '../pages/viaggi/AddViaggio.vue';
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
     path: '/viaggi',
     name: 'viaggi',
     component: Viaggi
+  },
+  {
+    path: '/add-viaggio',
+    name: 'addViaggio',
+    component: AddViaggio
   },
 ]
 

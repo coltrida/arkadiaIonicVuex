@@ -19,7 +19,7 @@
         
         <template v-slot:footerdata>
         <ion-fab vertical="bottom" horizontal="end">
-            <ion-fab-button routerLink="/add-or-update-ragazzo/0">
+            <ion-fab-button routerLink="/add-viaggio">
                 <ion-icon :icon="add"></ion-icon>
             </ion-fab-button>
         </ion-fab>

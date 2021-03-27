@@ -19,9 +19,12 @@ const actions = {
 
     async saveviaggio({commit}, payload){
         const response = await axios.post(`${help().linkinseriscichilometri}`, {
-            nomeRagazzo: payload.nomeRagazzo,
-            voucher: payload.voucher,
-            scadenza: payload.scadenza
+            kminiziali: payload.kminiziali,
+            kmfinali: payload.kmfinali,
+            utente: payload.utente_id,
+            car: payload.car_id,
+            giorno: payload.giorno,
+            raga: payload.passeggeri,
         });
         commit('saveviaggio', response.data);
     },
