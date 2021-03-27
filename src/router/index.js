@@ -9,6 +9,7 @@ import Attivita from '../pages/attivita/Attivita.vue';
 import AddOrUpdateAttivita from '../pages/attivita/AddOrUpdateAttivita.vue';
 import PresenzeOperatore from '../pages/operatori/PresenzeOperatore.vue';
 import AddPresenza from '../pages/operatori/AddPresenza.vue';
+import Viaggi from '../pages/viaggi/Viaggi.vue';
 
 const routes = [
   {
@@ -54,11 +55,18 @@ const routes = [
   },
   {
     path: '/presenzeOperatore',
+    name: 'presenzeOperatore',
     component: PresenzeOperatore
   },
   {
     path: '/add-presenza',
+    name: 'addPresenza',
     component: AddPresenza
+  },
+  {
+    path: '/viaggi',
+    name: 'viaggi',
+    component: Viaggi
   },
 ]
 
