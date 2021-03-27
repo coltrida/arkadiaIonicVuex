@@ -24,6 +24,12 @@ const getters = {
     getLogged(state){
         return state.logged;
     },
+
+    userbyId(state){
+        return (id) => {
+            return state.users.find(u => u.id === id);
+        }
+    }
 };
  
 const actions = {
@@ -51,6 +57,14 @@ const actions = {
         commit('savepresenza', response.data);
     },
 
+    async saveassociazioneoperatoreore({commit}, payload){
+        const response = await axios.post(`${help().linkassociaoperatoreore}`, {
+            operatore: payload.id,
+            ore: payload.oresettimanali,
+        });
+        commit('saveassociazioneoperatoreore', response.data);
+    },
+
     async eliminapresenza({commit}, id){
         await axios.delete(`${help().linkpresenzeoperatore}/${id}`);
         commit('eliminapresenza', id);
@@ -68,6 +82,12 @@ const mutations = {
 
     savepresenza(state, payload){
         state.presenze.unshift(payload);
+    },
+
+    saveassociazioneoperatoreore(state, payload){
+        //console.log(payload);
+        state.users = state.users.filter(u => u.id !== payload.id);
+        state.users.unshift(payload);
     },
 
     eliminapresenza(state, id){

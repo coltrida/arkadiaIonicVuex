@@ -11,69 +11,33 @@ import PresenzeOperatore from '../pages/operatori/PresenzeOperatore.vue';
 import AddPresenza from '../pages/operatori/AddPresenza.vue';
 import Viaggi from '../pages/viaggi/Viaggi.vue';
 import AddViaggio from '../pages/viaggi/AddViaggio.vue';
+import Associa from '../pages/associa/Index.vue';
+import ListaAssociaAttivitaRagazzo from '../pages/associa/attivitaragazzo/Lista.vue';
+import AddAssociaAttivitaRagazzo from '../pages/associa/attivitaragazzo/Inserisci.vue';
+import ListaAssociaOperatoreOre from '../pages/associa/operatoreore/Lista.vue';
+import AssociaOperatoreOre from '../pages/associa/operatoreore/Inserisci.vue';
+import PresenzeAttivita from '../pages/attivita/PresenzeAttivita.vue';
 
 const routes = [
-  {
-    path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/vetture',
-    name: 'Vetture',
-    component: Vetture
-  },
-  {
-    path: '/operatori',
-    name: 'Operatori',
-    component: Operatori
-  },
-  {
-    path: '/ragazzi',
-    name: 'Ragazzi',
-    component: Ragazzi
-  },
-  {
-    path: '/attivita',
-    name: 'Attivita',
-    component: Attivita
-  },
-  {
-    path: '/add-or-update-vettura/:id',
-    component: AddOrUpdateVettura
-  },
-  {
-    path: '/add-or-update-ragazzo/:id',
-    component: AddOrUpdateRagazzo
-  },
-  {
-    path: '/add-or-update-attivita/:id',
-    component: AddOrUpdateAttivita
-  },
-  {
-    path: '/presenzeOperatore',
-    name: 'presenzeOperatore',
-    component: PresenzeOperatore
-  },
-  {
-    path: '/add-presenza',
-    name: 'addPresenza',
-    component: AddPresenza
-  },
-  {
-    path: '/viaggi',
-    name: 'viaggi',
-    component: Viaggi
-  },
-  {
-    path: '/add-viaggio',
-    name: 'addViaggio',
-    component: AddViaggio
-  },
+  { path: '/', redirect: '/home' },
+  { path: '/home', name: 'Home', component: Home },
+  { path: '/vetture', name: 'Vetture', component: Vetture },
+  { path: '/operatori', name: 'Operatori', component: Operatori },
+  { path: '/ragazzi', name: 'Ragazzi', component: Ragazzi },
+  { path: '/attivita', name: 'Attivita', component: Attivita },
+  { path: '/add-or-update-vettura/:id', component: AddOrUpdateVettura },
+  { path: '/add-or-update-ragazzo/:id', component: AddOrUpdateRagazzo },
+  { path: '/add-or-update-attivita/:id', component: AddOrUpdateAttivita },
+  { path: '/presenzeOperatore', name: 'presenzeOperatore', component: PresenzeOperatore },
+  { path: '/add-presenza', name: 'addPresenza', component: AddPresenza },
+  { path: '/viaggi', name: 'viaggi', component: Viaggi },
+  { path: '/add-viaggio', name: 'addViaggio', component: AddViaggio },
+  { path: '/associa-e-log', name: 'AssociaLog', component: Associa },
+  { path: '/attivita-ragazzo', name: 'AssociaAttivitaRagazzo', component: ListaAssociaAttivitaRagazzo },
+  { path: '/add-associazione', name: 'AddAssociazione', component: AddAssociaAttivitaRagazzo },
+  { path: '/operatore-ore', name: 'AssociaOperatoreOre', component: ListaAssociaOperatoreOre },
+  { path: '/operatore-ore/:id', component: AssociaOperatoreOre },
+  { path: '/presenze-attivita', component: PresenzeAttivita },
 ]
 
 const router = createRouter({
