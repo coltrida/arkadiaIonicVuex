@@ -33,7 +33,6 @@ export default {
             routeId: Number(this.$route.params.id),
             pageTitle: '',
             btnText: "",
-            tipooo:'',
             activity: {}
         }
     },

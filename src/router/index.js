@@ -17,6 +17,7 @@ import AddAssociaAttivitaRagazzo from '../pages/associa/attivitaragazzo/Inserisc
 import ListaAssociaOperatoreOre from '../pages/associa/operatoreore/Lista.vue';
 import AssociaOperatoreOre from '../pages/associa/operatoreore/Inserisci.vue';
 import PresenzeAttivita from '../pages/attivita/PresenzeAttivita.vue';
+import AddPresenzaAttivita from '../pages/attivita/AddPresenzaAttivita.vue';
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -38,6 +39,7 @@ const routes = [
   { path: '/operatore-ore', name: 'AssociaOperatoreOre', component: ListaAssociaOperatoreOre },
   { path: '/operatore-ore/:id', component: AssociaOperatoreOre },
   { path: '/presenze-attivita', component: PresenzeAttivita },
+  { path: '/add-presenza-attivita', component: AddPresenzaAttivita },
 ]
 
 const router = createRouter({

@@ -11,7 +11,7 @@
                              <ion-card-subtitle>Quantità: {{attivitaragazzo.quantita}}</ion-card-subtitle>
                         </ion-col>
                         <ion-col>
-                            <ion-button expand="full" @click="deleteActivity(attivitaragazzo.id)" color="danger">
+                            <ion-button expand="full" @click="deletePresenzaRagazzo(attivitaragazzo.id)" color="danger">
                                 <ion-icon :icon="trash"></ion-icon>
                             </ion-button>
 
@@ -24,7 +24,7 @@
         
         <template v-slot:footerdata>
         <ion-fab vertical="bottom" horizontal="end">
-            <ion-fab-button routerLink="/add-or-update-attivita/0">
+            <ion-fab-button routerLink="/add-presenza-attivita">
                 <ion-icon :icon="add"></ion-icon>
             </ion-fab-button>
         </ion-fab>
@@ -33,12 +33,12 @@
 </template>
 
 <script>
-import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow,} from '@ionic/vue';
+import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton } from '@ionic/vue';
 import { add, trash } from 'ionicons/icons'
 import { mapActions, mapGetters } from 'vuex';
 export default {
     components: {
-        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow,
+        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton
     },
 
     computed:{
@@ -54,11 +54,11 @@ export default {
     methods:{
         ...mapActions('attivita', {
             fetchPresenzeAttivitaRagazzi:'fetchPresenzeAttivitaRagazzi',
-            eliminaactivityAction: 'eliminaactivity'
+            eliminapresenzaragazzoAction: 'eliminapresenzaragazzo'
         }),
 
-        deleteActivity(id){
-            this.eliminaactivityAction(id);
+        deletePresenzaRagazzo(id){
+            this.eliminapresenzaragazzoAction(id);
         }
     },
 
