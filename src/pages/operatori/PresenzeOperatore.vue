@@ -3,12 +3,18 @@
         <div>
             <ion-card v-for="presenza in allpresenze" :key="presenza.id">
                 <ion-card-content>
-                    <ion-card-title>{{presenza.giorno}}</ion-card-title>
-                    <ion-card-subtitle>Ore: {{presenza.ore}}</ion-card-subtitle>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title>{{presenza.giorno}}</ion-card-title>
+                            <ion-card-subtitle>Ore: {{presenza.ore}}</ion-card-subtitle>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button expand="full" color="danger" @click="deletePresenza(presenza.id)">
+                                <ion-icon  :icon="trash"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
                 </ion-card-content>
-                <ion-item>
-                    <ion-icon @click="deletePresenza(presenza.id)" :icon="trash"></ion-icon>
-                </ion-item>
             </ion-card>
         </div>
         
@@ -23,12 +29,12 @@
 </template>
 
 <script>
-import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonItem} from '@ionic/vue';
+import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton } from '@ionic/vue';
 import { add, trash } from 'ionicons/icons'
 import { mapActions, mapGetters } from 'vuex';
 export default {
     components: {
-        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonItem
+        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton
     },
 
     computed:{

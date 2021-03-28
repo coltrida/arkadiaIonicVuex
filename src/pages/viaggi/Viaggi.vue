@@ -3,17 +3,21 @@
         <div>
             <ion-card v-for="viaggio in allviaggi" :key="viaggio.id">
                 <ion-card-content>
-                    <ion-card-title>{{viaggio.giorno}}</ion-card-title>
-                    <ion-card-subtitle>Vettura {{viaggio.vettura}}</ion-card-subtitle>
-                    <ion-card-subtitle>Km Percorsi: {{viaggio.kmPercorsi}}</ion-card-subtitle>
-                    <ion-card-subtitle>Operatore: {{viaggio.operatore}}</ion-card-subtitle>
+                    <ion-row>
+                        <ion-col>
+                            <ion-card-title>{{viaggio.giorno}}</ion-card-title>
+                            <ion-card-subtitle>Vettura {{viaggio.vettura}}</ion-card-subtitle>
+                            <ion-card-subtitle>Km Percorsi: {{viaggio.kmPercorsi}}</ion-card-subtitle>
+                            <ion-card-subtitle>Operatore: {{viaggio.operatore}}</ion-card-subtitle>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button expand="full" color="primary" @click="openPopover(viaggio.passeggeri)">Passeggeri</ion-button>
+                            <ion-button expand="full"  @click="deleteViaggio(viaggio.id)" color="danger">
+                                <ion-icon :icon="trash"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
                 </ion-card-content>
-                <ion-row>
-                    <ion-button color="primary" @click="openPopover(viaggio.passeggeri)">Passeggeri</ion-button>
-                    <ion-item>
-                        <ion-icon @click="deleteViaggio(viaggio.id)" :icon="trash"></ion-icon>
-                    </ion-item>
-                </ion-row>
             </ion-card>
         </div>
         
@@ -28,13 +32,13 @@
 </template>
 
 <script>
-import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonItem, IonButton, popoverController } from '@ionic/vue';
+import {IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton, popoverController } from '@ionic/vue';
 import Popover from './Passeggeri.vue'
 import { add, trash } from 'ionicons/icons'
 import { mapActions, mapGetters } from 'vuex';
 export default {
     components: {
-        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonItem, IonButton
+        IonCard, IonCardContent, IonCardTitle, IonCardSubtitle, IonFab, IonFabButton, IonIcon, IonRow, IonCol, IonButton
     },
 
     computed:{

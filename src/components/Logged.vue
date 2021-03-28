@@ -1,6 +1,6 @@
 <template>
     <ion-button routerLink="/presenze-attivita" expand="full">Presenze Attività</ion-button>
-    <ion-button routerLink="/presenzeOperatore" expand="full">Presenze Operatore</ion-button>
+    <ion-button routerLink="/presenze-operatore" expand="full">Presenze Operatore</ion-button>
     <ion-button routerLink="/viaggi" expand="full">Inserisci Km</ion-button>
     <ion-button routerLink="/vetture" expand="full">Vetture</ion-button>
     <ion-button routerLink="/operatori" expand="full">Operatori</ion-button>

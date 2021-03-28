@@ -39,7 +39,7 @@ export default {
 
         savepresenza(){
             this.savepresenzaAction(this.presenza);
-            this.$router.push(`/presenzeOperatore`); 
+            this.$router.push(`/presenze-operatore`); 
         }
     },
     ionViewDidEnter(){

@@ -4,6 +4,7 @@ import UsersModule from './module/users';
 import RagazziModule from './module/ragazzi';
 import AttivitaModule from './module/attivita';
 import ViaggiModule from './module/viaggi';
+import StatisticheRagazziModule from './module/statisticheRagazzi';
 
 const store = createStore({
     modules:{
@@ -12,6 +13,7 @@ const store = createStore({
         ragazzi:RagazziModule,
         attivita:AttivitaModule,
         viaggi:ViaggiModule,
+        statisticheRagazzi:StatisticheRagazziModule,
     }
 });
 

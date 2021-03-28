@@ -18,6 +18,8 @@ import ListaAssociaOperatoreOre from '../pages/associa/operatoreore/Lista.vue';
 import AssociaOperatoreOre from '../pages/associa/operatoreore/Inserisci.vue';
 import PresenzeAttivita from '../pages/attivita/PresenzeAttivita.vue';
 import AddPresenzaAttivita from '../pages/attivita/AddPresenzaAttivita.vue';
+import Statistiche from '../pages/statistiche/Index.vue';
+import StatistichePresenzeRagazzi from '../pages/statistiche/presenzeRagazzi/StatistichePresenzeRagazzi.vue';
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -29,7 +31,7 @@ const routes = [
   { path: '/add-or-update-vettura/:id', component: AddOrUpdateVettura },
   { path: '/add-or-update-ragazzo/:id', component: AddOrUpdateRagazzo },
   { path: '/add-or-update-attivita/:id', component: AddOrUpdateAttivita },
-  { path: '/presenzeOperatore', name: 'presenzeOperatore', component: PresenzeOperatore },
+  { path: '/presenze-operatore', name: 'presenzeOperatore', component: PresenzeOperatore },
   { path: '/add-presenza', name: 'addPresenza', component: AddPresenza },
   { path: '/viaggi', name: 'viaggi', component: Viaggi },
   { path: '/add-viaggio', name: 'addViaggio', component: AddViaggio },
@@ -40,6 +42,8 @@ const routes = [
   { path: '/operatore-ore/:id', component: AssociaOperatoreOre },
   { path: '/presenze-attivita', component: PresenzeAttivita },
   { path: '/add-presenza-attivita', component: AddPresenzaAttivita },
+  { path: '/statistiche', component: Statistiche },
+  { path: '/statistiche-presenze-ragazzi', component: StatistichePresenzeRagazzi },
 ]
 
 const router = createRouter({
