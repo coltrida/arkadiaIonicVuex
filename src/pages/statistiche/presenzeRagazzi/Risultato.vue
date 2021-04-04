@@ -3,8 +3,8 @@
         <ion-grid>
             <ion-row>
                 <ion-col size="6">{{dati[0].activity.name}}</ion-col>
-                <ion-col size="5">Giorno</ion-col>
-                <ion-col size="1">Qt</ion-col>
+                <ion-col size="3">Qt</ion-col>
+                <ion-col size="2"></ion-col>
             </ion-row>
         </ion-grid>
     </ion-item>

@@ -5,6 +5,7 @@ import RagazziModule from './module/ragazzi';
 import AttivitaModule from './module/attivita';
 import ViaggiModule from './module/viaggi';
 import StatisticheRagazziModule from './module/statisticheRagazzi';
+import StatisticheOperatoriModule from './module/statisticheOperatori';
 
 const store = createStore({
     modules:{
@@ -14,6 +15,7 @@ const store = createStore({
         attivita:AttivitaModule,
         viaggi:ViaggiModule,
         statisticheRagazzi:StatisticheRagazziModule,
+        statisticheOperatori:StatisticheOperatoriModule,
     }
 });
 

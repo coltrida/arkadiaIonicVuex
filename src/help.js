@@ -23,6 +23,7 @@ const help = () => {
         linkchilometrivetture: 'http://statistichearkadia.local/api/statistiche/chilometriVetture',
         linkchilometriragazzi: 'http://statistichearkadia.local/api/statistiche/chilometriRagazzi', 
         linkassociaoperatoreore: 'http://statistichearkadia.local/api/operatori/associaOre', 
+        linklistasettimane: 'http://statistichearkadia.local/api/statistiche/listaSettimane',
 
 
 /* 
@@ -48,6 +49,7 @@ const help = () => {
         linkchilometrivetture: 'https://www.andirivieni.eu/api/statistiche/chilometriVetture',
         linkchilometriragazzi: 'https://www.andirivieni.eu/api/statistiche/chilometriRagazzi',
         linkassociaoperatoreore: 'https://www.andirivieni.eu/api/operatori/associaOre',
+        linklistasettimane: 'https://www.andirivieni.eu/api/statistiche/listaSettimane',
  */
 
     };

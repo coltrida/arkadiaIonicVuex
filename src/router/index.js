@@ -20,6 +20,7 @@ import PresenzeAttivita from '../pages/attivita/PresenzeAttivita.vue';
 import AddPresenzaAttivita from '../pages/attivita/AddPresenzaAttivita.vue';
 import Statistiche from '../pages/statistiche/Index.vue';
 import StatistichePresenzeRagazzi from '../pages/statistiche/presenzeRagazzi/StatistichePresenzeRagazzi.vue';
+import StatistichePresenzeOperatori from '../pages/statistiche/presenzeOperatori/StatistichePresenzeOperatori.vue';
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -44,6 +45,7 @@ const routes = [
   { path: '/add-presenza-attivita', component: AddPresenzaAttivita },
   { path: '/statistiche', component: Statistiche },
   { path: '/statistiche-presenze-ragazzi', component: StatistichePresenzeRagazzi },
+  { path: '/statistiche-presenze-operatori', component: StatistichePresenzeOperatori },
 ]
 
 const router = createRouter({
