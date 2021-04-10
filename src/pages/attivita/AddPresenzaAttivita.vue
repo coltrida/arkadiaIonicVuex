@@ -86,7 +86,6 @@ export default {
     },
 
     mounted(){
-        
             this.fetchActivities();
             this.fetchRagazzi(); 
     }

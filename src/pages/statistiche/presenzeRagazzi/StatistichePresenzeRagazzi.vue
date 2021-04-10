@@ -70,7 +70,7 @@
 
 <script>
 import Risultato from "./Risultato.vue";
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters, mapMutations } from 'vuex';
 import { IonCard, IonItem, IonLabel, IonButton, IonSelect, IonSelectOption } from '@ionic/vue';
 export default {
     components: { IonCard, IonItem, IonLabel, IonButton, IonSelect, IonSelectOption, Risultato },
@@ -114,6 +114,10 @@ export default {
             fetchPresenzeRagazzo:'fetchPresenzeRagazzo',
         }),
 
+        ...mapMutations('statisticheRagazzi', {
+            clearstatistiche:'clearstatistiche'
+        }),
+
         caricaAnni(){
             let annoOggi = new Date().getFullYear();
             for(let i = 2020; i <= annoOggi; i++){
@@ -128,6 +132,7 @@ export default {
     },
 
     mounted(){
+            
             this.fetchRagazzi();
             this.statistica = {
                 ragazzo : '',
@@ -136,6 +141,11 @@ export default {
             };
             this.caricaAnni(); 
             this.mostraTot = false;
+    },
+
+    ionViewDidEnter(){
+        this.clearstatistiche();
+        this.statistica = null;
     }
 }
 </script>

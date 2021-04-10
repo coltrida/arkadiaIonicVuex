@@ -45,7 +45,6 @@ const actions = {
  
 const mutations = {
     fetchPresenzeOperatore(state, payload){
-        console.log(payload);
         state.presenzeOperatore = payload[0];
         state.Tot = payload[1];
     },

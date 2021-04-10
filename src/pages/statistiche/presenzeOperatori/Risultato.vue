@@ -5,7 +5,7 @@
                 <ion-col size="6">{{valori.giorno}}</ion-col>
                 <ion-col size="3">{{valori.ore}}</ion-col>
                 <ion-col size="2">
-                    <ion-button color="danger">Elimina</ion-button>
+                    <!-- <ion-button color="danger">Elimina</ion-button> -->
                 </ion-col>
             </ion-row>
         </ion-grid>

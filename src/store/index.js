@@ -6,6 +6,8 @@ import AttivitaModule from './module/attivita';
 import ViaggiModule from './module/viaggi';
 import StatisticheRagazziModule from './module/statisticheRagazzi';
 import StatisticheOperatoriModule from './module/statisticheOperatori';
+import StatisticheKmVettureModule from './module/statisticheKmVetture';
+import StatisticheKmRagazzoModule from './module/statisticheKmRagazzo';
 
 const store = createStore({
     modules:{
@@ -16,6 +18,8 @@ const store = createStore({
         viaggi:ViaggiModule,
         statisticheRagazzi:StatisticheRagazziModule,
         statisticheOperatori:StatisticheOperatoriModule,
+        statisticheKmVetture:StatisticheKmVettureModule,
+        statisticheKmRagazzo:StatisticheKmRagazzoModule,
     }
 });
 

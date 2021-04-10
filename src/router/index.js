@@ -21,6 +21,8 @@ import AddPresenzaAttivita from '../pages/attivita/AddPresenzaAttivita.vue';
 import Statistiche from '../pages/statistiche/Index.vue';
 import StatistichePresenzeRagazzi from '../pages/statistiche/presenzeRagazzi/StatistichePresenzeRagazzi.vue';
 import StatistichePresenzeOperatori from '../pages/statistiche/presenzeOperatori/StatistichePresenzeOperatori.vue';
+import StatisticheKmVetture from '../pages/statistiche/kmVetture/StatisticheKmVetture.vue';
+import StatisticheKmRagazzi from '../pages/statistiche/kmRagazzi/StatisticheKmRagazzi.vue';
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -46,6 +48,8 @@ const routes = [
   { path: '/statistiche', component: Statistiche },
   { path: '/statistiche-presenze-ragazzi', component: StatistichePresenzeRagazzi },
   { path: '/statistiche-presenze-operatori', component: StatistichePresenzeOperatori },
+  { path: '/statistiche-km-vetture', component: StatisticheKmVetture },
+  { path: '/statistiche-km-ragazzi', component: StatisticheKmRagazzi },
 ]
 
 const router = createRouter({

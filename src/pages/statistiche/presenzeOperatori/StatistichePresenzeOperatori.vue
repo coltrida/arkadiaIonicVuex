@@ -32,7 +32,15 @@
         </ion-card>
 
         <div>
-            <h3>{{getNomeRagazzo}}</h3>
+        <ion-item v-if="getTot" color="success">
+        <ion-grid>
+                <ion-row>
+                    <ion-col size="6" color="success">Giorno</ion-col>
+                    <ion-col size="3" color="success">Ore</ion-col>
+                    <ion-col size="2" color="success"></ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
            <ion-list>
                 <risultato
                     v-for="item in allPresenzeOperatore"

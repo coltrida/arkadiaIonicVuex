@@ -10,7 +10,7 @@
                 </ion-col>
                 <ion-col size="3">
                     <ion-label>
-                        <ion-button color="danger">Elimina</ion-button>
+                        <ion-button expand="full" color="danger" @click="deletePresenzaRagazzo(payl)">Elimina</ion-button>
                     </ion-label>
                 </ion-col>
             </ion-row>
@@ -19,10 +19,31 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
     export default {
         name: "Presenza",
 
+        data(){
+            return{
+                payl:{
+                    id: this.passa.id,
+                    id_att: this.passa.activity_id
+                }
+            }
+        },
+
         props: ['passa'],
+
+        methods:{
+            ...mapActions('statisticheRagazzi', {
+                eliminapresenzaragazzoAction: 'eliminapresenzaragazzo'
+            }),
+
+            deletePresenzaRagazzo(payl){
+                this.eliminapresenzaragazzoAction(payl);
+                this.$router.go()
+            }
+        },
 
         mounted(){
             //console.log(this.passa)

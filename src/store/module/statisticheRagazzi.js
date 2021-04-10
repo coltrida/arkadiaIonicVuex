@@ -2,7 +2,7 @@ import axios from 'axios';
 import help from '../../help';
 
 const state = () => ({
-    presenzeRagazzo: {},
+    presenzeRagazzo: [],
     nomeRagazzo: '',
     costoTot: ''
 });
@@ -30,6 +30,12 @@ const actions = {
         });
         commit('fetchPresenzeRagazzo', response.data);
     },
+
+    async eliminapresenzaragazzo({commit}, payload){    
+        //console.log(`${help().linkattivitacliente}/${payload.id}`);                        
+        await axios.delete(`${help().linkattivitacliente}/${payload.id}`);
+        commit('eliminapresenzaragazzo', payload);
+    },
 };
  
 const mutations = {
@@ -38,6 +44,17 @@ const mutations = {
         state.costoTot = payload[1];
         state.nomeRagazzo = payload[2];
     },
+
+    eliminapresenzaragazzo(state, payload){                                   
+        state.presenzeRagazzo[payload.id_att] = state.presenzeRagazzo[payload.id_att].filter(u => u.id !== payload.id);
+    },
+
+    clearstatistiche(state){
+        console.log('pulisi');
+        state.presenzeRagazzo = [];
+        state.nomeRagazzo = '';
+        state.costoTot = ''
+    }
 
 };
  

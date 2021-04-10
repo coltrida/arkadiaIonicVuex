@@ -140,7 +140,8 @@ const mutations = {
         });
     },
 
-    eliminapresenzaragazzo(state, id){                                   // elimina presenza ragazzo
+    eliminapresenzaragazzo(state, id){    
+        //console.log(state.presenzeattivitaragazzi);                               // elimina presenza ragazzo
         state.presenzeattivitaragazzi = state.presenzeattivitaragazzi.filter(u => u.id !== id);
     },
 };
